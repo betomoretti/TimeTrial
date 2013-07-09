@@ -11,8 +11,8 @@ class Main extends CI_Controller {
 		/* Standard Libraries of codeigniter are required */
         $this->load->database();
         $this->load->helper('url');
-        /* ------------------ */ 
-        $this->load->model('login_model');
+        /* ------------------*/ 
+        $this->load->model('product_model');        
 
         $this->load->library('session');        
 
@@ -26,7 +26,7 @@ class Main extends CI_Controller {
 
     public function frontend()
     {
-
+        var_dump($this->product_model);
 
         $this->_frontend_output();
     }
@@ -48,7 +48,7 @@ class Main extends CI_Controller {
         $this->grocery_crud->set_table('product');
         $this->grocery_crud->set_subject('Products');
         $this->grocery_crud->display_as('file_picture_url','Image');
-
+        $this->grocery_crud->callback_delete(array($this,'delete_user'));
         $this->grocery_crud->set_field_upload('file_picture_url','assets/uploads/files');
         $output = $this->grocery_crud->render();
 
@@ -56,6 +56,11 @@ class Main extends CI_Controller {
         } else {
             redirect('autentication/login');
         } 
+    }
+
+    public function delete_user($primary_key)
+    {
+        return $this->db->update('product',array('delete' => '1'),array('id' => $primary_key));
     }
 
     function _products_output($output = null) 

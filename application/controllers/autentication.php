@@ -23,29 +23,23 @@ class Autentication extends CI_Controller {
         $this->output->enable_profiler(TRUE);
     
 
-        $this->load->view('login.php', $output = null); //si no recibimos datos por post, cargamos la vista del formulario
+        $this->load->view('login.php', $output = null); 
         }
         else
         {
-        //definimos las reglas de validación
        
         $this->form_validation->set_rules('username','Usuario','required|min_lenght[2]|max_lenght[20]');
         $this->form_validation->set_rules('password','Password','required');
        
-            if($this->form_validation->run() == FALSE) //si no supera las reglas de validación se recarga la vista del formulario
+            if($this->form_validation->run() == FALSE) 
             {
-
-
             $this->load->view('login.php',$output); 
             }
             else
             {
-            $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']); //pasamos los valores al modelo para que compruebe si existe el usuario con ese password
-           
+            $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']);            
                 if($isValidLogin)
-                {
-                // si existe el usuario, registramos las variables de sesión y abrimos la página de exito
-               
+                {              
                     $sesion_data = array(
                                     'username' => $_POST['username'],
                                     'password' => $_POST['password']
@@ -61,7 +55,6 @@ class Autentication extends CI_Controller {
                 }
                 else
                 {
-                // si es erroneo, devolvemos un mensaje de error
                 $this->load->view('login_error');
                 }
             }
@@ -73,8 +66,6 @@ class Autentication extends CI_Controller {
     }
    
    
-   
- 
     public function data()
     {
         if($this->session->userdata['username'] == TRUE)
