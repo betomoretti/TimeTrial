@@ -15,13 +15,28 @@
     <?php  include('navbar.php'); ?>
 <!-- End of navbar-->
     <div style='height:20px;'></div>  
-    <div>
-        <?= "frontend"; ?>
- 
+
+    <h2>Todos los Productos</h2>
+    <table>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th></th>
+
+    </tr>
+    <?php foreach($lista as $fila) : ?>
+    <tr>
+        <td ><?php echo $fila->name; ?></td>
+        <td ><?php echo $fila->description; ?></td>
+        <td ><img src="/assets/uploads/files/<?php echo $fila->file_picture_url; ?>"></td>
+    </tr>
+     
+    <?php
+    endforeach;
+    ?>
+    </table>
+    <div class="paginacion">
+    <?php echo $paginacion ?>
     </div>
-<!-- Beginning footer -->
-<div></div>
-<!-- End of Footer -->
- 
 </body>
 </html>

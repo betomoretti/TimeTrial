@@ -2,18 +2,32 @@
 
 class product_model extends CI_Model {
 
+	private $tb_product = 'product';
 
 	public function __construct()
 	{
 		parent::__construct();
-	    $this->load->database();
+
+        $this->load->database();
 
 	}
 
-	function get_last_ten_products()
+	public function get()
 	{
-		$query = $this->db->get('products', 10);
-		return $query->result();
+		return $this->db->get($this->tb_product);
+	}
+
+	function get_num_products()
+	{
+	    return $this->db->count_all($this->tb_product);
+	}
+
+	function get_all_products($limit,$start)
+	{
+	    $this->db->limit($limit,$start);
+	    $resultado = $this->db->get($this->tb_product);
+	 
+	    return $resultado->result();
 	}
 
 }

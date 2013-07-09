@@ -37,12 +37,15 @@ class Autentication extends CI_Controller {
             }
             else
             {
-            $isValidLogin = $this->login_model->getLogin($_POST['username'],$_POST['password']);            
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+
+            $isValidLogin = $this->login_model->getLogin($username,$password);            
                 if($isValidLogin)
                 {              
                     $sesion_data = array(
-                                    'username' => $_POST['username'],
-                                    'password' => $_POST['password']
+                                    'username' => $username,
+                                    'password' => $password
                                         );
                     $this->session->set_userdata($sesion_data);
                
