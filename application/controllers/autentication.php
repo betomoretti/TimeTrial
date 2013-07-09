@@ -20,7 +20,6 @@ class Autentication extends CI_Controller {
    
         if(!isset($_POST['username']))
         {
-        $this->output->enable_profiler(TRUE);
     
 
         $this->load->view('login.php', $output = null); 

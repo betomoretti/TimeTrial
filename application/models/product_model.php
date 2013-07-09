@@ -17,6 +17,11 @@ class product_model extends CI_Model {
 		return $this->db->get($this->tb_product);
 	}
 
+	public function get_by_id($id)
+	{
+		return $this->db->get_where($this->tb_product, array('id' => $id));
+	}
+
 	function get_num_products()
 	{
 	    return $this->db->count_all($this->tb_product);

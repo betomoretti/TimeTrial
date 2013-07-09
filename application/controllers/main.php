@@ -25,6 +25,18 @@ class Main extends CI_Controller {
         echo "funciona";
     }
 
+    public function product($id)
+    {
+        $data['product'] = $this->product_model->get_by_id($id);
+
+        $this->_show_product($data);
+    }
+
+    public function _show_product($data)
+    {
+        $this->load->view('product.php', $data)
+    }
+
     public function frontend()
     { 
         $opciones = array();
@@ -40,17 +52,13 @@ class Main extends CI_Controller {
         $data['lista'] = $this->product_model->get_all_products($opciones['per_page'],$desde);
         $data['paginacion'] = $this->pagination->create_links();
      
-
+        var_dump($data['lista']);
         $this->_frontend_output($data);
     }
 
 
     public function _frontend_output($data)
     {
-        $this->output->enable_profiler(TRUE);
-
-
-
         $this->load->view('frontend.php', $data);  
     }
 
