@@ -12,35 +12,38 @@ class Main extends CI_Controller {
         $this->load->database();
         $this->load->helper('url');
         /* ------------------ */ 
-        $this->load->library('ion_auth');
+        $this->load->model('login_model');
+
+        $this->load->library('session');        
+
         $this->load->library('grocery_CRUD');
+
 	}
 
     function index() {
         echo "funciona";
     }
+
     public function frontend()
     {
+
+
         $this->_frontend_output();
-
     }
 
-    public function login()
-    {
-        
-    }
 
-    public function _login_output($output = null)
-    {
-        $this->load->view('login.php',$output);  
-    }
     public function _frontend_output($output = null)
     {
+        $this->output->enable_profiler(TRUE);
+
+
         $this->load->view('frontend.php',$output);  
     }
 
     public function products()
     {
+
+        if($this->session->userdata('username')) {
         $this->grocery_crud->set_theme('datatables');
         $this->grocery_crud->set_table('product');
         $this->grocery_crud->set_subject('Products');
@@ -48,13 +51,15 @@ class Main extends CI_Controller {
 
         $this->grocery_crud->set_field_upload('file_picture_url','assets/uploads/files');
         $output = $this->grocery_crud->render();
- 		
+
  		$this->_products_output($output);
+        } else {
+            redirect('autentication/login');
+        } 
     }
 
-    function _products_output($output = null)
- 
+    function _products_output($output = null) 
     {
-        $this->load->view('products.php',$output);    
+        $this->load->view('products.php',$output );    
     }
 }

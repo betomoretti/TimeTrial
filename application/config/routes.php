@@ -40,6 +40,13 @@
 
 $route['default_controller'] = "main/frontend";
 $route['404_override'] = '';
+$route['login'] = "autentication/login";
+$route['logout'] = "autentication/logout";
+$route['frontend'] = "main/frontend";
+$route['backend'] = "main/products";
+
+
+
 
 
 /* End of file routes.php */

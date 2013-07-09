@@ -41,6 +41,7 @@ a:hover
 <body>
 <!-- Beginning navbar -->
     <?php  include('navbar.php'); ?>
+    <h3> <?php echo "Bienvenido ".$this->session->userdata('username'); ?> </h1>
 <!-- End of navbar-->
     <div style='height:20px;'></div>  
     <div>
