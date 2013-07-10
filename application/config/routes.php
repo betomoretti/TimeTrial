@@ -44,7 +44,7 @@ $route['login'] = "autentication/login";
 $route['logout'] = "autentication/logout";
 $route['frontend'] = "main/frontend";
 $route['backend'] = "main/products";
-$route['product/:num'] = "main/product/$1";
+$route['product/(:num)'] = "main/product/$1";
 
 
 

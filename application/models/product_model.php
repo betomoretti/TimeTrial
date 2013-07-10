@@ -14,12 +14,12 @@ class product_model extends CI_Model {
 
 	public function get()
 	{
-		return $this->db->get($this->tb_product);
+		return $this->db->get($this->tb_product)->result();
 	}
 
 	public function get_by_id($id)
 	{
-		return $this->db->get_where($this->tb_product, array('id' => $id));
+		return $this->db->get_where($this->tb_product, array('id' => $id))->result();
 	}
 
 	function get_num_products()

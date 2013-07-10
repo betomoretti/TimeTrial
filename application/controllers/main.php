@@ -27,18 +27,20 @@ class Main extends CI_Controller {
 
     public function product($id)
     {
-        $data['product'] = $this->product_model->get_by_id($id);
+        $product = $this->product_model->get_by_id($id);
 
-        $this->_show_product($data);
+        $data['product'] = $product[0];
+        $this->_product_output($data);
     }
 
-    public function _show_product($data)
+    public function _product_output($data)
     {
-        $this->load->view('product.php', $data)
+        $this->load->view('product.php', $data);
     }
 
     public function frontend()
     { 
+
         $opciones = array();
         $desde = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
      
@@ -52,7 +54,6 @@ class Main extends CI_Controller {
         $data['lista'] = $this->product_model->get_all_products($opciones['per_page'],$desde);
         $data['paginacion'] = $this->pagination->create_links();
      
-        var_dump($data['lista']);
         $this->_frontend_output($data);
     }
 

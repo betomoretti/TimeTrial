@@ -3,10 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/foundation.min.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/foundation.css" />
 
 <script src="/assets/js/vendor/custom.modernizr.js"></script>
-<script src="/assets/js/foundation/foundation.topbar.js"></script>
 
 
      
@@ -22,20 +21,7 @@ foreach($css_files as $file): ?>
 <?php endforeach; ?>
  
 <style type='text/css'>
-body
-{
-    font-family: Arial;
-    font-size: 14px;
-}
-a {
-    color: blue;
-    text-decoration: none;
-    font-size: 14px;
-}
-a:hover
-{
-    text-decoration: underline;
-}
+
 </style>
 </head>
 <body>
@@ -43,7 +29,6 @@ a:hover
     <?php  include('navbar.php'); ?>
     <h3> <?php echo "Bienvenido ".$this->session->userdata('username'); ?> </h1>
 <!-- End of navbar-->
-    <div style='height:20px;'></div>  
     <div>
         <?php echo $output; ?>
  

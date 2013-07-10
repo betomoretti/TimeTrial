@@ -12,7 +12,6 @@ class login_model extends CI_Model
    
     public function getLogin($username,$password)
     {
-    //comprobamos que el nombre de usuario y contraseña coinciden
     $data = array(
     'username' => $username,
     'password' => $password
@@ -25,8 +24,6 @@ class login_model extends CI_Model
    
     public function isLogged()
     {
-    //Comprobamos si existe la variable de sesión username. En caso de no existir, le impediremos el paso a la página para usuarios registrados
-   
         if(isset($this->session->userdata['username']))
         {
         return TRUE;
@@ -42,7 +39,6 @@ class login_model extends CI_Model
    
     public function close()
     {
-    //cerrar sesión
     return $this->session->sess_destroy();
     }
 }
