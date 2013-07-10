@@ -2,8 +2,14 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+/*
+* Controlador que contiene las funciones principales de la aplicacion 
+*/
 class Main extends CI_Controller {
 
+    /*
+    * Constructor del controlador. Se cargan todas las librerias necesarias en el controlador. 
+    */
     public function __construct()
 	{
 		parent::__construct();
@@ -11,20 +17,20 @@ class Main extends CI_Controller {
 		/* Standard Libraries of codeigniter are required */
         $this->load->database();
         $this->load->helper('url');
-        /* ------------------*/ 
+        
         $this->load->model('product_model');    
 
         $this->load->library('pagination');
         $this->load->library('session');        
 
         $this->load->library('grocery_CRUD');
-
+        /* ------------------*/ 
 	}
 
-    function index() {
-        echo "funciona";
-    }
-
+    /*
+    * Funcion que procesa el show de un producto.
+    * @param string $id Id del producto a mostrar 
+    */
     public function product($id)
     {
         $product = $this->product_model->get_by_id($id);
@@ -33,11 +39,18 @@ class Main extends CI_Controller {
         $this->_product_output($data);
     }
 
+    /*
+    * Funcion que renderiza la vista de un producto
+    * @param data $data Datos utiles para la vista 
+    */
     public function _product_output($data)
     {
         $this->load->view('product.php', $data);
     }
 
+    /*
+    * Funcion que procesa el frontend de la aplicacion.
+    */
     public function frontend()
     { 
 
@@ -57,12 +70,18 @@ class Main extends CI_Controller {
         $this->_frontend_output($data);
     }
 
-
+    /*
+    * Funcion que renderiza la vista del frontend
+    * @param data $data Datos utiles para la vista 
+    */
     public function _frontend_output($data)
     {
         $this->load->view('frontend.php', $data);  
     }
 
+    /*
+    * Funcion que procesa el backend de la aplicacion.
+    */
     public function products()
     {
 
@@ -81,13 +100,24 @@ class Main extends CI_Controller {
         } 
     }
 
+    /*
+    * Funcion que procesa el borrado logico de un producto.
+    */
     public function delete_user($primary_key)
     {
         return $this->db->update('product',array('delete' => '1'),array('id' => $primary_key));
     }
 
+    /*
+    * Funcion que renderiza la vista del backend
+    * @param output $output Datos utiles para la vista 
+    */
     function _products_output($output = null) 
     {
         $this->load->view('products.php',$output );    
     }
 }
+
+
+/* End of file main.php */
+/* Location: ./application/controllers/main.php */

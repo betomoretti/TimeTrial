@@ -2,9 +2,14 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+/*
+* Controlador para el logeo. 
+*/
 class Autentication extends CI_Controller {
 
-
+    /*
+    * Constructor del controlador 
+    */
     public function __construct()
     {
         parent::__construct();
@@ -15,12 +20,15 @@ class Autentication extends CI_Controller {
         $this->load->library('session');        
     }
 
+
+    /*
+    * Funcion para logear a un usuario 
+    */
     public function login()
     {
    
-        if(!isset($_POST['username']))
-        {
-    
+        if(!$this->input->post('username'))
+        {  
 
         $this->load->view('login.php', $output = null); 
         }
@@ -39,7 +47,7 @@ class Autentication extends CI_Controller {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            $isValidLogin = $this->login_model->getLogin($username,$password);            
+            $isValidLogin = $this->login_model->get_login($username,$password);            
                 if($isValidLogin)
                 {              
                     $sesion_data = array(
@@ -59,47 +67,22 @@ class Autentication extends CI_Controller {
                 {
                 $this->load->view('login_error');
                 }
-            }
-       
+            }     
        
         }
        
        
     }
-   
-   
-    public function data()
-    {
-        if($this->session->userdata['username'] == TRUE)
-        {
-        echo $this->session->userdata['username'];
-        echo "<br>";
-        echo $this->session->userdata['password'];
-        }
-    }
-   
-   
+
+    
+    /*
+    * Funcion para deslogear a un usuario
+    */
     public function logout()
     {
-    //destruimos la sesión
         $this->login_model->close(); 
+
         redirect('main/frontend');
-   }
-   
-   
-    public function perfil()
-    {
-    //pagina restringida a usuarios registrados.
-    $logged = $this->login_model->isLogged();
-       
-        if($logged == TRUE)
-        {
-        echo "Tienes permiso para ver el contenido privado";
-        }
-        else
-        {
-        //si no tiene permiso, abrimos el formulario para loguearse
-        $this->load->view('login');
-        }
     }
+   
 }

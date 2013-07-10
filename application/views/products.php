@@ -4,11 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="/assets/css/foundation.css" />
-
-<script src="/assets/js/vendor/custom.modernizr.js"></script>
-
-
-     
+    <script src="/assets/js/vendor/custom.modernizr.js"></script>
 <?php 
 
 foreach($css_files as $file): ?>
@@ -32,18 +28,6 @@ foreach($css_files as $file): ?>
     <div>
         <?php echo $output; ?>
  
-    </div>
-<!-- Beginning footer -->
-<div></div>
-<!-- End of Footer -->
-
-<script>
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-</script>
-<script>
-  $(document).foundation();
-</script>   
+    </div>  
 </body>
 </html>

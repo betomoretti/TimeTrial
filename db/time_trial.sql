@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-07-2013 a las 04:33:24
--- Versión del servidor: 5.5.29
--- Versión de PHP: 5.4.6-1ubuntu1.1
+-- Tiempo de generación: 10-07-2013 a las 02:36:24
+-- Versión del servidor: 5.5.31
+-- Versión de PHP: 5.4.6-1ubuntu1.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -40,36 +40,36 @@ CREATE TABLE IF NOT EXISTS `product` (
   `create_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=141 ;
 
 --
 -- Volcado de datos para la tabla `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `active`, `delete`, `file_picture_url`, `price`, `price_usd`, `stock`, `update_at`, `create_at`) VALUES
-(49, 'Producto Nº 1', '<p>\n	Modifique la descripcion del producto.</p>\n', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-07 19:10:52', '2013-07-07 19:04:43'),
-(50, 'Producto Nº 2', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(51, 'Producto Nº 3', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(52, 'Producto Nº 4', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(53, 'Producto Nº 5', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(54, 'Producto Nº 6', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(55, 'Producto Nº 7', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(56, 'Producto Nº 8', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(57, 'Producto Nº 9', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(58, 'Producto Nº 10', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(59, 'Producto Nº 11', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(60, 'Producto Nº 12', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(61, 'Producto Nº 13', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(62, 'Producto Nº 14', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(63, 'Producto Nº 15', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(64, 'Producto Nº 16', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(65, 'Producto Nº 17', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(66, 'Producto Nº 18', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(67, 'Producto Nº 19', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(68, 'Producto Nº 20', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(69, 'Producto Nº 21', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(70, 'Producto Nº 22', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43'),
-(71, 'Producto Nº 23', 'Descripcion del producto', 1, 0, '', 237, 40, 15, '2013-07-07 19:04:43', '2013-07-07 19:04:43');
+(118, 'Producto Nº 1', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(119, 'Producto Nº 2', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(120, 'Producto Nº 3', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(121, 'Producto Nº 4', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(122, 'Producto Nº 5', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(123, 'Producto Nº 6', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(124, 'Producto Nº 7', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(125, 'Producto Nº 8', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(126, 'Producto Nº 9', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(127, 'Producto Nº 10', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(128, 'Producto Nº 11', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(129, 'Producto Nº 12', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(130, 'Producto Nº 13', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(131, 'Producto Nº 14', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(132, 'Producto Nº 15', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(133, 'Producto Nº 16', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(134, 'Producto Nº 17', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(135, 'Producto Nº 18', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(136, 'Producto Nº 19', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(137, 'Producto Nº 20', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(138, 'Producto Nº 21', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(139, 'Producto Nº 22', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41'),
+(140, 'Producto Nº 23', 'Descripcion del producto', 1, 0, '682b2-technics-q-c-222-204-7.jpg', 237, 40, 15, '2013-07-09 16:01:41', '2013-07-09 16:01:41');
 
 --
 -- Disparadores `product`

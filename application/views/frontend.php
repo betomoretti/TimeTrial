@@ -3,17 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="/assets/css/foundation.css" />
-
-<script src="/assets/js/vendor/custom.modernizr.js"></script>
-
-
-     
+    <script src="/assets/js/vendor/custom.modernizr.js"></script>     
 </head>
 <body>
-<!-- Beginning navbar -->
     <?php  include('navbar.php'); ?>
-<!-- End of navbar-->
- 
+ <div class="container">
+  <div class="row">
+            <div class="12 columns">
+                <div class="row">
+                    <div class="4 centered columns">
     <h2>Todos los Productos</h2>
 
     <ul class="small-block-grid-2 large-block-grid-4">
@@ -29,11 +27,15 @@
               <a class="th radius" >
               <img src="/assets/uploads/files/<?php echo $fila->file_picture_url; ?>">
               </a>
-        <?php endforeach; ?>
-       
-    </ul>
-    <div class="pagination">
-        <?php echo $paginacion ?>
+            <?php endforeach; ?>
+            </ul>
+              <div class="right">
+                <?php echo $paginacion ?>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+  </div>
 </body>
 </html>
